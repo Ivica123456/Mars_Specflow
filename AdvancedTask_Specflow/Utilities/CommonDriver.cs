@@ -1,0 +1,106 @@
+﻿using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using AdvancedTask_Specflow.Pages;
+using NUnit.Framework;
+using AdvancedTask_Specflow.AssertHelpers;
+using AdvancedTask_Specflow.Pages.Components.SignIn;
+using OpenQA.Selenium.Support.UI;
+using AdvancedTask_Specflow.Pages.Components.ProfilePageTabComponents;
+using AdvancedTask_Specflow.Model;
+using NUnit.Framework.Interfaces;
+using AventStack.ExtentReports;
+using AventStack.ExtentReports.Reporter;
+using AdvancedTask_Specflow.Json_DataModelHelper;
+
+
+namespace AdvancedTask_Specflow.Utilities
+{
+    [Binding]
+    public class CommonDriver
+    {
+
+        public static IWebDriver driver;
+        public static LoginPage loginPageObj;
+        public static HomePage homePageObj;
+        public static SplashPage splashPageObj;
+        public static LoginAssertHelper loginAssertHelperObj;
+        public static ChangePasswordMessageHelper changePasswordMessageHelperObj;
+        public static EducationAssertHelper educationAssertHelperObj;
+        public static EducationComponent educationComponentObj;
+        public static AddEditDeleteEducationComponent addEditDeleteEducationComponentObj;
+        public static ProfilePageTabsComponents profilePageTabsComponentsObj;
+        public static AddEditDeleteCertificationComponent addEditDeleteCertificationComponentObj;
+        public static CertificationComponents certificationComponentsObj;
+        public static CertificationDataModel certificationDataModel;
+        public static CertificationAssertHelper certificationAssertHelperObj;
+        public static ChangePasswordComponent changePasswordComponentObj;
+        public static CurrentNewConfirmPasswordComponents currentNewConfirmPasswordComponentObj;
+        public static PasswordChangeDataModel passwordChangeDataModelObj;
+        public static Login_JsonDataModel login_JsonDataModel;
+        public static LoginPage_Json loginPage_JsonObj;
+        public static Load_JsonFile_DataModelObject load_JsonFileDataModelObj;
+        public static ManageRequestHelper manageRequestHelperObj;
+        public static ExtentReports extent;
+        public static ExtentTest test;
+
+        [BeforeTestRun]
+        public static void BeforeTestRun()
+        {
+            //ChromeOptions chromeOptions = new ChromeOptions();
+            //chromeOptions.AddArgument("--headless");
+            //IWebDriver driver = new ChromeDriver(chromeOptions);
+            driver = new ChromeDriver(/*chromeOptions*/);
+            loginPageObj = new LoginPage();
+            homePageObj = new HomePage();
+            
+            splashPageObj = new SplashPage();
+            loginAssertHelperObj = new LoginAssertHelper();
+            changePasswordMessageHelperObj = new ChangePasswordMessageHelper();
+            educationAssertHelperObj = new EducationAssertHelper();
+            educationComponentObj = new EducationComponent();
+            addEditDeleteEducationComponentObj = new AddEditDeleteEducationComponent();
+            profilePageTabsComponentsObj = new ProfilePageTabsComponents();
+            addEditDeleteCertificationComponentObj = new AddEditDeleteCertificationComponent();
+            certificationComponentsObj = new CertificationComponents();
+            certificationDataModel = new CertificationDataModel();
+            certificationAssertHelperObj = new CertificationAssertHelper();
+            changePasswordComponentObj = new ChangePasswordComponent();
+            currentNewConfirmPasswordComponentObj = new CurrentNewConfirmPasswordComponents();
+            passwordChangeDataModelObj = new PasswordChangeDataModel();
+            login_JsonDataModel = new Login_JsonDataModel();
+            loginPage_JsonObj = new LoginPage_Json();
+            load_JsonFileDataModelObj = new Load_JsonFile_DataModelObject();
+            manageRequestHelperObj = new ManageRequestHelper();
+
+            var htmlReporter = new ExtentHtmlReporter("C:\\Users\\Ivica\\Desktop\\AdvancedTask-Specflow\\AdvancedTask_Specflow\\AdvancedTask_Specflow\\ExtentReport\\");
+            htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Dark;
+
+            extent = new ExtentReports();
+            extent.AttachReporter(htmlReporter);
+
+
+
+        }
+       
+
+
+        [AfterTestRun]
+        public static void AfterTestRun()
+        {
+            extent.Flush();
+            //driver.Dispose();
+        }
+
+
+    }
+
+}
+
+
+
+
