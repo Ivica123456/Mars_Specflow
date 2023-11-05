@@ -21,7 +21,6 @@ namespace AdvancedTask_Specflow.Json_DataModelHelper
 
             currentNewConfirmPasswordComponentObj.newPassword(passwordChangeDataModel);
 
-
         }
         public void EmailAndPassword()
         {
@@ -32,7 +31,6 @@ namespace AdvancedTask_Specflow.Json_DataModelHelper
             // Pass the data model object to the `doSignIn` method.
 
             loginPage_JsonObj.doSignIn(login_JsonDataModel);
-
 
         }
         public void passwordNotMeetTheRequirements()
@@ -54,7 +52,6 @@ namespace AdvancedTask_Specflow.Json_DataModelHelper
             // Pass the data model object to the `newPassword()` method.
 
             currentNewConfirmPasswordComponentObj.newPassword(passwordChangeDataModel);
-
 
         }
         public void loginDataNewPassword()
@@ -85,7 +82,6 @@ namespace AdvancedTask_Specflow.Json_DataModelHelper
             // Pass the data model object to the `EditCertification()` method.
 
             addEditDeleteCertificationComponentObj.EditCertification(certificationDataModel);
-
 
         }
 

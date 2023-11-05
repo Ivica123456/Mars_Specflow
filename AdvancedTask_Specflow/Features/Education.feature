@@ -28,6 +28,7 @@ Scenario: [1Add Education]
 	When [[User enters valid '<email>' and '<password>' and click on login button]
 	When User delete education
 	Then Education should be deleted
+	
 	Examples: 
 	| email                  | password |
 	| ivica.cuncic@gmail.com | mars123  |
