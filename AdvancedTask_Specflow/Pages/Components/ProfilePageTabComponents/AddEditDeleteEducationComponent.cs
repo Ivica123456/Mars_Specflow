@@ -157,17 +157,8 @@ namespace AdvancedTask_Specflow.Pages.Components.ProfilePageTabComponents
 
 
 
-
         }
         
-
-
-
-
-
-
-
-
 
 
     }

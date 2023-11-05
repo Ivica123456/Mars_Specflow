@@ -70,9 +70,6 @@ namespace AdvancedTask_Specflow.StepDefinitions
             educationComponentObj.editButton();
             addEditDeleteEducationComponentObj.editEducation(University, Country, Title, Degree, Graduation);
 
-
-
-
         }
         [Then(@"User able to see edited education details")]
         public void ThenUserAbleToSeeEditedEducationDetails()

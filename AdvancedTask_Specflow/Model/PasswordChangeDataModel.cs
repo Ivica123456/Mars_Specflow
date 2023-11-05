@@ -13,7 +13,5 @@ namespace AdvancedTask_Specflow.Model
         public string New { get; set; }
         public string Confirm { get; set; }
 
-
-
     }
 }

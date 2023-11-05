@@ -83,17 +83,14 @@ namespace AdvancedTask_Specflow.Utilities
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);
 
-
-
         }
        
-
 
         [AfterTestRun]
         public static void AfterTestRun()
         {
             extent.Flush();
-            //driver.Dispose();
+            driver.Dispose();
         }
 
 

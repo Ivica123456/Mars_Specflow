@@ -22,7 +22,6 @@ namespace AdvancedTask_Specflow.Json_DataModelHelper
             currentNewConfirmPasswordComponentObj.newPassword(passwordChangeDataModel);
 
 
-
         }
         public void EmailAndPassword()
         {
@@ -55,7 +54,6 @@ namespace AdvancedTask_Specflow.Json_DataModelHelper
             // Pass the data model object to the `newPassword()` method.
 
             currentNewConfirmPasswordComponentObj.newPassword(passwordChangeDataModel);
-
 
 
         }
