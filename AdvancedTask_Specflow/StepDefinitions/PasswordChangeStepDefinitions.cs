@@ -17,7 +17,7 @@ namespace AdvancedTask_Specflow.StepDefinitions
             test = extent.CreateTest("User enter incorrect current password");
             profilePageTabsComponentsObj.clickWelcomeTab();
             changePasswordComponentObj.clickPasswordButton();
-            load_JsonFileDataModelObj.passwordChangeIncorrect_data();
+            jsonFileDataModelLoaderObj.passwordChangeIncorrect_data();
         }
 
         [Then(@"\[User can't change password Verification Failed ]")]
@@ -32,7 +32,7 @@ namespace AdvancedTask_Specflow.StepDefinitions
         {
             // Create a test instance for this step
             test = extent.CreateTest("User enters valid email and password and click on login button");
-            load_JsonFileDataModelObj.EmailAndPassword();
+            jsonFileDataModelLoaderObj.EmailAndPassword();
            
         }
         [When(@"\[User enter a password that does not meet the requirements \(e\.g\. less than (.*) characters, contains only letters\) and confirm the password]")]
@@ -42,7 +42,7 @@ namespace AdvancedTask_Specflow.StepDefinitions
             test = extent.CreateTest("User enter a password that does not meet the requirements");
             profilePageTabsComponentsObj.clickWelcomeTab();
             changePasswordComponentObj.clickPasswordButton();
-            load_JsonFileDataModelObj.passwordNotMeetTheRequirements();
+            jsonFileDataModelLoaderObj.passwordNotMeetTheRequirements();
                     
         }
         [Then(@"\[User can't change password ]")]
@@ -59,7 +59,7 @@ namespace AdvancedTask_Specflow.StepDefinitions
             test = extent.CreateTest("User change to new password successfully");
             profilePageTabsComponentsObj.clickWelcomeTab();
             changePasswordComponentObj.clickPasswordButton();
-            load_JsonFileDataModelObj.newPassword_dataJsonDataModel();           
+            jsonFileDataModelLoaderObj.newPassword_dataJsonDataModel();           
             profilePageTabsComponentsObj.clickSignOut();
         }
 
@@ -69,7 +69,7 @@ namespace AdvancedTask_Specflow.StepDefinitions
             // Create a test instance for this step
             test = extent.CreateTest("User should login with new password successfully");
             splashPageObj.clickSignInButton();
-            load_JsonFileDataModelObj.loginDataNewPassword();
+            jsonFileDataModelLoaderObj.loginDataNewPassword();
             
         }
         [Then(@"\[User is logged in and landed to profile page]")]

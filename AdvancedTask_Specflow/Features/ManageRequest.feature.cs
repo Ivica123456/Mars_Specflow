@@ -96,7 +96,9 @@ this.ScenarioInitialize(scenarioInfo);
 testRunner.Given("the user is on the Mars Portal login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 9
-testRunner.When("the user enters a valid email and password and logs in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("the user enters valid credentials from the JSON file located at \"C:\\Users\\Ivica\\D" +
+                        "esktop\\AdvancedTask-Specflow\\AdvancedTask_Specflow\\AdvancedTask_Specflow\\TestDat" +
+                        "a\\loginData.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 10
 testRunner.And("the user clicks on the Manage Requests dropdown menu and selects the Sent Request" +
@@ -130,7 +132,9 @@ this.ScenarioInitialize(scenarioInfo);
 testRunner.Given("the user is on the Mars Portal login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 16
-testRunner.When("the user enters a valid email and password and logs in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.When("the user enters valid credentials from the JSON file located at \"C:\\Users\\Ivica\\D" +
+                        "esktop\\AdvancedTask-Specflow\\AdvancedTask_Specflow\\AdvancedTask_Specflow\\TestDat" +
+                        "a\\loginData.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 17
 testRunner.And("the user clicks on the Manage Requests dropdown menu and selects the ReceivedRequ" +

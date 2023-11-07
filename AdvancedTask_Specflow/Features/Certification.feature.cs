@@ -107,7 +107,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When(string.Format("[User enters valid \'{0}\' and \'{1}\' and click on login button]", email, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
- testRunner.And("[User add new certification]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User add new certification from the JSON file located at \"C:\\Users\\Ivica\\Desktop\\" +
+                        "AdvancedTask-Specflow\\AdvancedTask_Specflow\\AdvancedTask_Specflow\\TestData\\certi" +
+                        "fication_data.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 10
  testRunner.Then("[Certification should be added successfully]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -143,7 +145,9 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When(string.Format("[User enters valid \'{0}\' and \'{1}\' and click on login button]", email, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 17
- testRunner.And("[User edit existing certification]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("User edit existing certification from the JSON file located at \"C:\\\\Users\\\\Ivica\\" +
+                        "\\Desktop\\\\AdvancedTask-Specflow\\\\AdvancedTask_Specflow\\\\AdvancedTask_Specflow\\\\T" +
+                        "estData\\\\editCertification_data.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 18
  testRunner.Then("[Certification should be edited successfully]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

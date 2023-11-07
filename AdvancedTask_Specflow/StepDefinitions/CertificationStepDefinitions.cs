@@ -18,19 +18,22 @@ namespace AdvancedTask_Specflow.StepDefinitions
     public class CertificationStepDefinitions:CommonDriver
     {
 
-     
-        [When(@"\[User add new certification]")]
-        public void WhenUserAddNewCertification()
+        [When(@"User add new certification from the JSON file located at ""([^""]*)""")]
+        public void WhenUserAddNewCertificationFromTheJSONFileLocatedAt(string p0)
         {
             // Create a test instance for this step
-            test = extent.CreateTest("When user add a new certification");
-            profilePageTabsComponentsObj.clickCertificationTab();
-            addEditDeleteCertificationComponentObj.clearTable();
-            certificationComponentsObj.AddNewButton();
-            load_JsonFileDataModelObj.addCertificationJsonDataModel();
-            
-        }
+                test = extent.CreateTest("When user add a new certification");
+                profilePageTabsComponentsObj.clickCertificationTab();
+                addEditDeleteCertificationComponentObj.clearTable();
+                certificationComponentsObj.AddNewButton();
+           
+            // Load the JSON file into a data model object.
+            CertificationDataModel certificationDataModel = JsonConvert.DeserializeObject<CertificationDataModel>(File.ReadAllText(p0));
+            // Pass the data model object to the `AddCertification()` method.
+            addEditDeleteCertificationComponentObj.AddCertification(certificationDataModel);
 
+
+        }
         [Then(@"\[Certification should be added successfully]")]
         public void ThenCertificationShouldBeAddedSuccessfully()
         {
@@ -39,15 +42,19 @@ namespace AdvancedTask_Specflow.StepDefinitions
             certificationAssertHelperObj.assertAddCertification();
           
         }
-        [When(@"\[User edit existing certification]")]
-        public void WhenUserEditExistingCertification()
+        [When(@"User edit existing certification from the JSON file located at ""([^""]*)""")]
+        public void WhenUserEditExistingCertificationFromTheJSONFileLocatedAt(string p0)
         {
             // Create a test instance for this step
-            test = extent.CreateTest("User edit existing certification");
+            test = extent.CreateTest("User edit existing certification from the JSON file");
             profilePageTabsComponentsObj.clickCertificationTab();
             certificationComponentsObj.EditButton();
-            load_JsonFileDataModelObj.EditCertificationJsonDataModel();
-           
+            
+            // Load the JSON file using the 'filePath' parameter.
+            CertificationDataModel certificationDataModel = JsonConvert.DeserializeObject<CertificationDataModel>(File.ReadAllText(p0));
+            // Pass the data model object to the `EditCertification` method.
+            addEditDeleteCertificationComponentObj.EditCertification(certificationDataModel);
+            
         }
         [Then(@"\[Certification should be edited successfully]")]
         public void ThenCertificationShouldBeEditedSuccessfully()

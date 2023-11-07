@@ -74,7 +74,7 @@ namespace AdvancedTask_Specflow.StepDefinitions
         {
             // Create a test instance for this step
             test = extent.CreateTest("User enters Json data nagative credentials and click on login button");
-            load_JsonFileDataModelObj.loginDataNewPassword();
+            jsonFileDataModelLoaderObj.loginDataNewPassword();
         }
         [Then(@"\[User should see an error message indicating that the valid login credentials are required]")]
         public void ThenUserShouldSeeAnErrorMessageIndicatingThatTheValidLoginCredentialsAreRequired()
@@ -88,7 +88,7 @@ namespace AdvancedTask_Specflow.StepDefinitions
         {
             // Create a test instance for this step
             test = extent.CreateTest("User enters valid Json data credentials and click on login button");
-            load_JsonFileDataModelObj.EmailAndPassword();
+            jsonFileDataModelLoaderObj.EmailAndPassword();
         }
         [Then(@"\[User should see an success message that is logged in to Mars Portal]")]
         public void ThenUserShouldSeeAnSuccessMessageThatIsLoggedInToMarsPortal()
