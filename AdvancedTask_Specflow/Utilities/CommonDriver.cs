@@ -41,9 +41,8 @@ namespace AdvancedTask_Specflow.Utilities
         public static ChangePasswordComponent changePasswordComponentObj;
         public static CurrentNewConfirmPasswordComponents currentNewConfirmPasswordComponentObj;
         public static PasswordChangeDataModel passwordChangeDataModelObj;
-        public static Login_JsonDataModel login_JsonDataModel;
+        public static JsonFileDataModelLoader jsonFileDataModelLoaderObj;
         public static LoginPage_Json loginPage_JsonObj;
-        public static Load_JsonFile_DataModelObject load_JsonFileDataModelObj;
         public static ManageRequestHelper manageRequestHelperObj;
         public static ExtentReports extent;
         public static ExtentTest test;
@@ -72,9 +71,8 @@ namespace AdvancedTask_Specflow.Utilities
             changePasswordComponentObj = new ChangePasswordComponent();
             currentNewConfirmPasswordComponentObj = new CurrentNewConfirmPasswordComponents();
             passwordChangeDataModelObj = new PasswordChangeDataModel();
-            login_JsonDataModel = new Login_JsonDataModel();
+            jsonFileDataModelLoaderObj = new JsonFileDataModelLoader();
             loginPage_JsonObj = new LoginPage_Json();
-            load_JsonFileDataModelObj = new Load_JsonFile_DataModelObject();
             manageRequestHelperObj = new ManageRequestHelper();
 
             var htmlReporter = new ExtentHtmlReporter("C:\\Users\\Ivica\\Desktop\\AdvancedTask-Specflow\\AdvancedTask_Specflow\\AdvancedTask_Specflow\\ExtentReport\\");

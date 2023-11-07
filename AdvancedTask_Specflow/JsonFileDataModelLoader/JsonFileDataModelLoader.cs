@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AdvancedTask_Specflow.Json_DataModelHelper
 {
-    public class Load_JsonFile_DataModelObject : CommonDriver
+    public class JsonFileDataModelLoader : CommonDriver
     {
         public void passwordChangeIncorrect_data()
         {
@@ -21,7 +21,6 @@ namespace AdvancedTask_Specflow.Json_DataModelHelper
 
             currentNewConfirmPasswordComponentObj.newPassword(passwordChangeDataModel);
 
-
         }
         public void EmailAndPassword()
         {
@@ -32,7 +31,6 @@ namespace AdvancedTask_Specflow.Json_DataModelHelper
             // Pass the data model object to the `doSignIn` method.
 
             loginPage_JsonObj.doSignIn(login_JsonDataModel);
-
 
         }
         public void passwordNotMeetTheRequirements()
@@ -55,7 +53,6 @@ namespace AdvancedTask_Specflow.Json_DataModelHelper
 
             currentNewConfirmPasswordComponentObj.newPassword(passwordChangeDataModel);
 
-
         }
         public void loginDataNewPassword()
         {
@@ -67,27 +64,7 @@ namespace AdvancedTask_Specflow.Json_DataModelHelper
             loginPage_JsonObj.doSignIn(login_JsonDataModel);
 
         }
-        public void addCertificationJsonDataModel()
-        {
-            // Load the JSON file into a data model object.
-            CertificationDataModel certificationDataModel = JsonConvert.DeserializeObject<CertificationDataModel>(File.ReadAllText("C:\\Users\\Ivica\\Desktop\\AdvancedTask-Specflow\\AdvancedTask_Specflow\\AdvancedTask_Specflow\\TestData\\certification_data.json"));
 
-            // Pass the data model object to the `AddCertification()` method.
-
-            addEditDeleteCertificationComponentObj.AddCertification(certificationDataModel);
-
-        }
-        public void EditCertificationJsonDataModel()
-        {
-            // Load the JSON file into a data model object.
-            CertificationDataModel certificationDataModel = JsonConvert.DeserializeObject<CertificationDataModel>(File.ReadAllText("C:\\Users\\Ivica\\Desktop\\AdvancedTask-Specflow\\AdvancedTask_Specflow\\AdvancedTask_Specflow\\TestData\\editCertification_data.json"));
-
-            // Pass the data model object to the `EditCertification()` method.
-
-            addEditDeleteCertificationComponentObj.EditCertification(certificationDataModel);
-
-
-        }
 
     }
 }

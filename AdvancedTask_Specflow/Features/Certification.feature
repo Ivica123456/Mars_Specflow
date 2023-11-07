@@ -6,7 +6,7 @@ A short summary of the feature
 Scenario: [1Add certification]
 	Given [User can successfully login to Mars Portal with valid credentials]
 	When [User enters valid '<email>' and '<password>' and click on login button]
-	And [User add new certification]
+	And  User add new certification from the JSON file located at "C:\Users\Ivica\Desktop\AdvancedTask-Specflow\AdvancedTask_Specflow\AdvancedTask_Specflow\TestData\certification_data.json"
 	Then [Certification should be added successfully]
 	Examples: 
 	| email                  | password |
@@ -14,7 +14,7 @@ Scenario: [1Add certification]
 	Scenario: [2Edit certification]
 	Given [User can successfully login to Mars Portal with valid credentials]
 	When [User enters valid '<email>' and '<password>' and click on login button]
-	And [User edit existing certification]
+	And  User edit existing certification from the JSON file located at "C:\\Users\\Ivica\\Desktop\\AdvancedTask-Specflow\\AdvancedTask_Specflow\\AdvancedTask_Specflow\\TestData\\editCertification_data.json"
 	Then [Certification should be edited successfully]
 	Examples: 
 	| email                  | password |

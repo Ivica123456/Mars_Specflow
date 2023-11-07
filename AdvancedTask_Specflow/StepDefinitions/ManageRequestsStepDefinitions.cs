@@ -1,4 +1,7 @@
+using AdvancedTask_Specflow.Model;
 using AdvancedTask_Specflow.Utilities;
+using Newtonsoft.Json;
+using SharpCompress.Common;
 using System;
 using TechTalk.SpecFlow;
 
@@ -15,14 +18,20 @@ namespace AdvancedTask_Specflow.StepDefinitions
             homePageObj.GoToLoginPage();
             splashPageObj.clickSignInButton();
         }
-
-        [When(@"the user enters a valid email and password and logs in")]
-        public void WhenTheUserEntersAValidEmailAndPasswordAndLogsIn()
+              
+        [When(@"the user enters valid credentials from the JSON file located at ""([^""]*)""")]
+        public void WhenTheUserEntersValidCredentialsFromTheJSONFileLocatedAt(string p0)
         {
             // Create a test instance for this step
-            test = extent.CreateTest("User enters valid Json data credentials and click on login button");
-            load_JsonFileDataModelObj.EmailAndPassword();
+            test = extent.CreateTest("User enters valid credentials from JSON file");
+
+            // Load the JSON file using the 'filePath' parameter.
+            Login_JsonDataModel login_JsonDataModel = JsonConvert.DeserializeObject<Login_JsonDataModel>(File.ReadAllText(p0));
+
+            // Pass the data model object to the `doSignIn` method.
+            loginPage_JsonObj.doSignIn(login_JsonDataModel);
         }
+
 
         [When(@"the user clicks on the Manage Requests dropdown menu and selects the Sent Requests option")]
         public void WhenTheUserClicksOnTheManageRequestsDropdownMenuAndSelectsTheSentRequestsOption()
