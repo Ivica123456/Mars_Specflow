@@ -23,7 +23,6 @@ namespace AdvancedTask_Specflow.StepDefinitions
             splashPageObj.clickSignInButton();
                         
         }
-
         [When(@"\[User enters valid '([^']*)' and '([^']*)' and click on login button]")]
         public void WhenUserEntersValidAndAndClickOnLoginButton(string email, string password)
         {
@@ -31,7 +30,6 @@ namespace AdvancedTask_Specflow.StepDefinitions
             test = extent.CreateTest("User is on the Mars Portal login page");
             loginPageObj.doSignIn(email, password);
         }
-
         [Then(@"\[User is successfully logged in to Mars Portal]")]
         public void ThenUserIsSuccessfullyLoggedInToMarsPortal()
         {
@@ -96,13 +94,6 @@ namespace AdvancedTask_Specflow.StepDefinitions
             test = extent.CreateTest("User should see an success message that is logged in to Mars Portal");
             loginAssertHelperObj.successMessage();
         }
-
-
-
-
-
-
-
 
 
     }

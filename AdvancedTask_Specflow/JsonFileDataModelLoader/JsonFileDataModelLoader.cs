@@ -13,7 +13,6 @@ namespace AdvancedTask_Specflow.Json_DataModelHelper
     {
         public void passwordChangeIncorrect_data()
         {
-
             // Load the JSON file into a data model object.
             PasswordChangeDataModel passwordChangeDataModel = JsonConvert.DeserializeObject<PasswordChangeDataModel>(File.ReadAllText("C:\\Users\\Ivica\\Desktop\\AdvancedTask-Specflow\\AdvancedTask_Specflow\\AdvancedTask_Specflow\\TestData\\passwordChangeIncorrect_data.json"));
 
@@ -24,7 +23,6 @@ namespace AdvancedTask_Specflow.Json_DataModelHelper
         }
         public void EmailAndPassword()
         {
-
             // Load the JSON file into a data model object.
             Login_JsonDataModel login_JsonDataModel = JsonConvert.DeserializeObject<Login_JsonDataModel>(File.ReadAllText("C:\\Users\\Ivica\\Desktop\\AdvancedTask-Specflow\\AdvancedTask_Specflow\\AdvancedTask_Specflow\\TestData\\loginData.json"));
 
@@ -35,7 +33,6 @@ namespace AdvancedTask_Specflow.Json_DataModelHelper
         }
         public void passwordNotMeetTheRequirements()
         {
-
             // Load the JSON file into a data model object.
             PasswordChangeDataModel passwordChangeDataModel = JsonConvert.DeserializeObject<PasswordChangeDataModel>(File.ReadAllText("C:\\Users\\Ivica\\Desktop\\AdvancedTask-Specflow\\AdvancedTask_Specflow\\AdvancedTask_Specflow\\TestData\\passwordNotMeetRequirements_data.json"));
 
@@ -56,7 +53,6 @@ namespace AdvancedTask_Specflow.Json_DataModelHelper
         }
         public void loginDataNewPassword()
         {
-
             // Load the JSON file into a data model object.
             Login_JsonDataModel login_JsonDataModel = JsonConvert.DeserializeObject<Login_JsonDataModel>(File.ReadAllText("C:\\Users\\Ivica\\Desktop\\AdvancedTask-Specflow\\AdvancedTask_Specflow\\AdvancedTask_Specflow\\TestData\\loginDataNewPassword.json"));
             

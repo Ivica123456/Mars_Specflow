@@ -85,10 +85,7 @@ namespace AdvancedTask_Specflow.Pages.Components.ProfilePageTabComponents
             updateButton.Click();
             //Refresh page
             driver.Navigate().Refresh();
-            //Wait for the certification button to be visible:
-           
-           
-            
+                                
         }
 
         public void clearTable()

@@ -18,7 +18,6 @@ namespace AdvancedTask_Specflow.StepDefinitions
             homePageObj.GoToLoginPage();
             splashPageObj.clickSignInButton();
         }
-              
         [When(@"the user enters valid credentials from the JSON file located at ""([^""]*)""")]
         public void WhenTheUserEntersValidCredentialsFromTheJSONFileLocatedAt(string p0)
         {
@@ -31,8 +30,6 @@ namespace AdvancedTask_Specflow.StepDefinitions
             // Pass the data model object to the `doSignIn` method.
             loginPage_JsonObj.doSignIn(login_JsonDataModel);
         }
-
-
         [When(@"the user clicks on the Manage Requests dropdown menu and selects the Sent Requests option")]
         public void WhenTheUserClicksOnTheManageRequestsDropdownMenuAndSelectsTheSentRequestsOption()
         {
@@ -41,8 +38,6 @@ namespace AdvancedTask_Specflow.StepDefinitions
             profilePageTabsComponentsObj.clickManageRequests();
             profilePageTabsComponentsObj.clickSentRequests();
         }
-
-
         [Then(@"the application navigates to the /Home/SentRequest page")]
         public void ThenTheApplicationNavigatesToTheHomeSentRequestPage()
         {
@@ -65,8 +60,6 @@ namespace AdvancedTask_Specflow.StepDefinitions
             test = extent.CreateTest("Then The Application Navigates To The Home Received Request Page");
             manageRequestHelperObj.assertReceivedRequest();
         }
-
-
 
     }
 }

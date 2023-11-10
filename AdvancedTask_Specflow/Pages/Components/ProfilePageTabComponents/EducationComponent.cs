@@ -53,8 +53,6 @@ namespace AdvancedTask_Specflow.Pages.Components.ProfilePageTabComponents
             deleteButton.Click();
             Thread.Sleep(2000);
 
-
-
         }
        
         public bool IsdeleteSelection()
@@ -70,8 +68,7 @@ namespace AdvancedTask_Specflow.Pages.Components.ProfilePageTabComponents
                 return true;
             }
         }
-       
-
+     
 
 
     }

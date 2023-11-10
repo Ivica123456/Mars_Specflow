@@ -70,8 +70,7 @@ namespace AdvancedTask_Specflow.Pages.Components.ProfilePageTabComponents
         {
             renderComponents(); 
             manageRequestsDropdown.Click();
-                             
-
+             
         }
         public void clickSentRequests()
         {
@@ -85,8 +84,6 @@ namespace AdvancedTask_Specflow.Pages.Components.ProfilePageTabComponents
             Thread.Sleep(1000);
             receivedRequestButton.Click();
         }
-
-
 
 
     }

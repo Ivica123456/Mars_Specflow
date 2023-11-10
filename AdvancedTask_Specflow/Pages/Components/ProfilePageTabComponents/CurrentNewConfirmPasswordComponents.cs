@@ -71,9 +71,7 @@ namespace AdvancedTask_Specflow.Pages.Components.ProfilePageTabComponents
             driver.Navigate().Refresh();
             
         }
-        
-
-
+     
 
     }
 
