@@ -23,7 +23,6 @@ namespace AdvancedTask_Specflow.Utilities
     [Binding]
     public class CommonDriver
     {
-
         public static IWebDriver driver;
         public static LoginPage loginPageObj;
         public static HomePage homePageObj;
@@ -50,13 +49,9 @@ namespace AdvancedTask_Specflow.Utilities
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-            //ChromeOptions chromeOptions = new ChromeOptions();
-            //chromeOptions.AddArgument("--headless");
-            //IWebDriver driver = new ChromeDriver(chromeOptions);
-            driver = new ChromeDriver(/*chromeOptions*/);
+            driver = new ChromeDriver();
             loginPageObj = new LoginPage();
             homePageObj = new HomePage();
-            
             splashPageObj = new SplashPage();
             loginAssertHelperObj = new LoginAssertHelper();
             changePasswordMessageHelperObj = new ChangePasswordMessageHelper();
@@ -89,7 +84,6 @@ namespace AdvancedTask_Specflow.Utilities
         {
             TestStatus testStatus = scenarioContext.TestError == null ? TestStatus.Passed : TestStatus.Failed;
             
-
             // Log the scenario status
             if (testStatus == TestStatus.Passed)
             {
@@ -111,15 +105,12 @@ namespace AdvancedTask_Specflow.Utilities
             test.Log(Status.Info, "Additional info for the scenario");
         }
 
-
         [AfterTestRun]
         public static void AfterTestRun()
         {
             extent.Flush();
             driver.Dispose();
         }
-
-
 
     }
 

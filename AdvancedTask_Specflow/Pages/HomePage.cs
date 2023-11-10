@@ -15,12 +15,8 @@ namespace AdvancedTask_Specflow.Pages
 
         public HomePage()
         {
-
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
-
         }
-
-
         public void GoToLoginPage()
         {
             //Open Chrome Driver

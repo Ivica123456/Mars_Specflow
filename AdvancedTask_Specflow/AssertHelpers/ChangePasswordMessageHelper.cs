@@ -20,8 +20,6 @@ namespace AdvancedTask_Specflow.AssertHelpers
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
         }
 
-
-
         public void successMessage()
         {
             // Get the success message element
@@ -40,7 +38,7 @@ namespace AdvancedTask_Specflow.AssertHelpers
         }
         public void IsUserLoggedIn() 
         {
-
+            Thread.Sleep(2000);
             var Dashboard = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[1]/div/a[1]"));
             Assert.AreEqual("Dashboard", Dashboard.Text);
             // Assert that the current URL is the profile page URL

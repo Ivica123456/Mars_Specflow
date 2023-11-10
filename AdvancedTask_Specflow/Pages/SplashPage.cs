@@ -12,7 +12,6 @@ namespace AdvancedTask_Specflow.Pages
     {
         private IWebElement signInButton;
 
-
         public void renderComponents()
         {
             try
@@ -27,7 +26,6 @@ namespace AdvancedTask_Specflow.Pages
         }
         public void clickSignInButton()
         {
-
             //Click on "Sign In" button
             Wait.WaitToBeClickable(driver, "XPath", "//a[contains(@class,\"item\")]", 10);
 

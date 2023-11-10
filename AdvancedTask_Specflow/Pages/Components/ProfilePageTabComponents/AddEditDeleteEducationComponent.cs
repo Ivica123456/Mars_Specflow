@@ -134,8 +134,6 @@ namespace AdvancedTask_Specflow.Pages.Components.ProfilePageTabComponents
             selectElementSelectTitle.SelectByValue(Title);
             editTitleDropdown.Click();
 
-
-
             // Input degree
             editInputDegree.Clear();
             editInputDegree.SendKeys(Degree);
@@ -148,14 +146,10 @@ namespace AdvancedTask_Specflow.Pages.Components.ProfilePageTabComponents
             SelectElement selectElementSelectYear = new SelectElement(editYearOfGraduation);
             selectElementSelectYear.SelectByValue(Graduation);
             editYearOfGraduation.Click();
-
-            
-
+                  
             updateButton.Click();
 
             Wait.WaitToBeVisible(driver, "CssSelector", ".ns-box-inner", 5);
-
-
 
         }
         
