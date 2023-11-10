@@ -22,12 +22,12 @@ namespace AdvancedTask_Specflow.StepDefinitions
         public void WhenUserAddNewCertificationFromTheJSONFileLocatedAt(string p0)
         {
             // Create a test instance for this step
-                test = extent.CreateTest("When user add a new certification");
-                profilePageTabsComponentsObj.clickCertificationTab();
+            test = extent.CreateTest("When user add a new certification");
+            profilePageTabsComponentsObj.clickCertificationTab();
                 addEditDeleteCertificationComponentObj.clearTable();
                 certificationComponentsObj.AddNewButton();
-           
-            // Load the JSON file into a data model object.
+
+            // Load the JSON file using the 'filePath' parameter.
             CertificationDataModel certificationDataModel = JsonConvert.DeserializeObject<CertificationDataModel>(File.ReadAllText(p0));
             // Pass the data model object to the `AddCertification()` method.
             addEditDeleteCertificationComponentObj.AddCertification(certificationDataModel);
@@ -40,7 +40,6 @@ namespace AdvancedTask_Specflow.StepDefinitions
             // Create a test instance for this step
             test = extent.CreateTest("Then Certification Should Be Added Successfully");
             certificationAssertHelperObj.assertAddCertification();
-          
         }
         [When(@"User edit existing certification from the JSON file located at ""([^""]*)""")]
         public void WhenUserEditExistingCertificationFromTheJSONFileLocatedAt(string p0)

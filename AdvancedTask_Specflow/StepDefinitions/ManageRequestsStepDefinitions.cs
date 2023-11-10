@@ -13,8 +13,8 @@ namespace AdvancedTask_Specflow.StepDefinitions
         [Given(@"the user is on the Mars Portal login page")]
         public void GivenTheUserIsOnTheMarsPortalLoginPage()
         {
-            // Create a test instance for this step
-            test = extent.CreateTest("Given User is on the Mars Portal login page");
+            //// Create a test instance for this step
+            //test = extent.CreateTest("Given User is on the Mars Portal login page");
             homePageObj.GoToLoginPage();
             splashPageObj.clickSignInButton();
         }
