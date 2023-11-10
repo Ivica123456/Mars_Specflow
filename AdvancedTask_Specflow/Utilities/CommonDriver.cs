@@ -80,9 +80,37 @@ namespace AdvancedTask_Specflow.Utilities
 
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);
+            // Create a test instance for the test run
+            test = extent.CreateTest("Test Run Report");
 
         }
-       
+        [AfterScenario]
+        public void AfterScenario(ScenarioContext scenarioContext)
+        {
+            TestStatus testStatus = scenarioContext.TestError == null ? TestStatus.Passed : TestStatus.Failed;
+            
+
+            // Log the scenario status
+            if (testStatus == TestStatus.Passed)
+            {
+                test.Pass("Test passed");
+            }
+            else
+            {
+                test.Fail("Test failed");
+
+                // Log the failure details
+                if (scenarioContext.TestError != null)
+                {
+                    string failureMessage = scenarioContext.TestError.Message;
+                    test.Log(Status.Fail, "Failure Details: " + failureMessage);
+                }
+            }
+
+            // Log additional information if needed
+            test.Log(Status.Info, "Additional info for the scenario");
+        }
+
 
         [AfterTestRun]
         public static void AfterTestRun()
@@ -90,6 +118,7 @@ namespace AdvancedTask_Specflow.Utilities
             extent.Flush();
             driver.Dispose();
         }
+
 
 
     }

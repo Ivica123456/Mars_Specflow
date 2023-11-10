@@ -18,7 +18,7 @@ namespace AdvancedTask_Specflow.StepDefinitions
         public void GivenUserIsOnTheMarsPortalLoginPage()
         {
             // Create a test instance for this step
-            test = extent.CreateTest("Given User is on the Mars Portal login page");
+            test = extent.CreateTest("User is on the Mars Portal login page");
             homePageObj.GoToLoginPage();
             splashPageObj.clickSignInButton();
                         
@@ -28,16 +28,15 @@ namespace AdvancedTask_Specflow.StepDefinitions
         public void WhenUserEntersValidAndAndClickOnLoginButton(string email, string password)
         {
             // Create a test instance for this step
-            test = extent.CreateTest("When User enters valid credentials and click on login button");
+            test = extent.CreateTest("User is on the Mars Portal login page");
             loginPageObj.doSignIn(email, password);
-
         }
 
         [Then(@"\[User is successfully logged in to Mars Portal]")]
         public void ThenUserIsSuccessfullyLoggedInToMarsPortal()
         {
             // Create a test instance for this step
-            test = extent.CreateTest("Then User is successfully logged in to Mars Portal");
+            test = extent.CreateTest("User is successfully logged in to Mars Portal");
             loginAssertHelperObj.successMessage();
            
         }
@@ -45,21 +44,21 @@ namespace AdvancedTask_Specflow.StepDefinitions
         public void WhenUserEntersInvalidAndAndClickOnLoginButton(string email, string password)
         {
             // Create a test instance for this step
-            test = extent.CreateTest("User enters invalid email and password");
+            test = extent.CreateTest("When User Enters Invalid  And Click On Login Button");
             loginPageObj.doSignIn(email,password);
         }
         [Then(@"\[User should see an error message indicating that the login credentials are invalid]")]
         public void ThenUserShouldSeeAnErrorMessageIndicatingThatTheLoginCredentialsAreInvalid()
         {
             // Create a test instance for this step
-            test = extent.CreateTest("User should see an error message indicating that the login credentials are invalid");
+            test = extent.CreateTest("Then User Should See An Error Message Indicating That The Login Credentials Are Invalid");
             loginAssertHelperObj.failureMessage();
         }
         [When(@"\[User enters empty '([^']*)' and '([^']*)' and click on login button]")]
         public void WhenUserEntersEmptyAndAndClickOnLoginButton(string email, string password)
         {
             // Create a test instance for this step
-            test = extent.CreateTest("When user enters empty email and password");
+            test = extent.CreateTest("When User Enters Empty And Click On Login Button");
             loginPageObj.doSignIn(email,password);
         }
         [Then(@"\[User should see an error message indicating that the login credentials are required]")]
@@ -94,7 +93,7 @@ namespace AdvancedTask_Specflow.StepDefinitions
         public void ThenUserShouldSeeAnSuccessMessageThatIsLoggedInToMarsPortal()
         {
             // Create a test instance for this step
-            test = extent.CreateTest("Then User is successfully logged in to Mars Portal");
+            test = extent.CreateTest("User should see an success message that is logged in to Mars Portal");
             loginAssertHelperObj.successMessage();
         }
 

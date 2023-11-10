@@ -37,7 +37,7 @@ namespace AdvancedTask_Specflow.StepDefinitions
         public void WhenUserEntersValidAndAndClickOnLoginButton(string email, string password)
         {
             // Create a test instance for this step
-            test = extent.CreateTest("User Enters valid email and password then click on login button");
+            test = extent.CreateTest("User enters valid email and password and click on login button");
             loginPageObj.doSignIn(email, password);
         }
 
@@ -65,7 +65,7 @@ namespace AdvancedTask_Specflow.StepDefinitions
         public void WhenUserEditEducationIncluding(string University, string Country, string Title, string Degree, string Graduation)
         {
             // Create a test instance for this step
-            test = extent.CreateTest("User edit education");
+            test = extent.CreateTest("When User Edit Education Including");
             profilePageTabsComponentsObj.clickEducationTab();
             educationComponentObj.editButton();
             addEditDeleteEducationComponentObj.editEducation(University, Country, Title, Degree, Graduation);
