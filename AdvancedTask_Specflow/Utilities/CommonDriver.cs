@@ -46,6 +46,7 @@ namespace AdvancedTask_Specflow.Utilities
         public static ExtentReports extent;
         public static ExtentTest test;
 
+
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
@@ -81,7 +82,7 @@ namespace AdvancedTask_Specflow.Utilities
         }
         [AfterScenario]
         public void AfterScenario(ScenarioContext scenarioContext)
-        {
+          {
             TestStatus testStatus = scenarioContext.TestError == null ? TestStatus.Passed : TestStatus.Failed;
             
             // Log the scenario status

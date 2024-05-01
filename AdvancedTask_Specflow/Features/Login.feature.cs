@@ -76,19 +76,11 @@ namespace AdvancedTask_Specflow.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("[ 1User can successfully login to Mars Portal with valid credentials]")]
         [NUnit.Framework.CategoryAttribute("tag1")]
-        [NUnit.Framework.TestCaseAttribute("ivica.cuncic@gmail.com", "mars123", null)]
-        public void _1UserCanSuccessfullyLoginToMarsPortalWithValidCredentials(string email, string password, string[] exampleTags)
+        public void _1UserCanSuccessfullyLoginToMarsPortalWithValidCredentials()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "tag1"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("email", email);
-            argumentsOfScenario.Add("password", password);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("[ 1User can successfully login to Mars Portal with valid credentials]", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
@@ -104,7 +96,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("[ User is on the Mars Portal login page]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
- testRunner.When(string.Format("[User enters valid \'{0}\' and \'{1}\' and click on login button]", email, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("[User enters valid email and password and click on login button]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
  testRunner.Then("[User is successfully logged in to Mars Portal]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -114,8 +106,8 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("[ 2User cannot successfully login to Mars Portal with invalid credentials]")]
-        [NUnit.Framework.TestCaseAttribute("ivica.cuncic@gmail.com", "invalid", null)]
+        [NUnit.Framework.DescriptionAttribute("[2User cannot successfully login to Mars Portal with invalid credentials]")]
+        [NUnit.Framework.TestCaseAttribute("ivica.cuncic@gmail.com", "zeki123", null)]
         [NUnit.Framework.TestCaseAttribute("invalid@gmail.com", "mars123", null)]
         public void _2UserCannotSuccessfullyLoginToMarsPortalWithInvalidCredentials(string email, string password, string[] exampleTags)
         {
@@ -123,62 +115,26 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("email", email);
             argumentsOfScenario.Add("password", password);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("[ 2User cannot successfully login to Mars Portal with invalid credentials]", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("[2User cannot successfully login to Mars Portal with invalid credentials]", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 12
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 13
+ testRunner.Given("User is on Mars Portal login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 14
+ testRunner.When(string.Format("User enters invalid \'{0}\' and \'{1}\' and click on login button", email, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
 #line 15
- this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 16
- testRunner.Given("[ User is on the Mars Portal login page]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 17
- testRunner.When(string.Format("[User enters invalid \'{0}\' and \'{1}\' and click on login button]", email, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 18
- testRunner.Then("[User should see an error message indicating that the login credentials are inval" +
-                        "id]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("[ 3User cannot successfully login to Mars Portal with empty credentials]")]
-        [NUnit.Framework.TestCaseAttribute("", "", null)]
-        [NUnit.Framework.TestCaseAttribute("ivica.cuncic@gmail.com", "", null)]
-        [NUnit.Framework.TestCaseAttribute("", "mars123", null)]
-        public void _3UserCannotSuccessfullyLoginToMarsPortalWithEmptyCredentials(string email, string password, string[] exampleTags)
-        {
-            string[] tagsOfScenario = exampleTags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("email", email);
-            argumentsOfScenario.Add("password", password);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("[ 3User cannot successfully login to Mars Portal with empty credentials]", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 25
- this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 26
- testRunner.Given("[ User is on the Mars Portal login page]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 27
- testRunner.When(string.Format("[User enters empty \'{0}\' and \'{1}\' and click on login button]", email, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 28
- testRunner.Then("[User should see an error message indicating that the login credentials are requi" +
-                        "red]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("User should see an error message indicating that the login credentials are invali" +
+                        "d", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -193,8 +149,8 @@ this.ScenarioInitialize(scenarioInfo);
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("[ 4User cannot successfully login to Mars Portal with Json data negative credenti" +
                     "als]", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 35
- this.ScenarioInitialize(scenarioInfo);
+#line 23
+this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
             {
@@ -203,15 +159,15 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 36
- testRunner.Given("[ User is on the Mars Portal login page]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 24
+ testRunner.Given("User is on Mars Portal login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 37
- testRunner.When("[User enters Json data nagative credentials and click on login button]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 25
+ testRunner.When("User enters Json data nagative credentials and click on login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 38
- testRunner.Then("[User should see an error message indicating that the valid login credentials are" +
-                        " required]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 26
+ testRunner.Then("User should see an error message indicating that the valid login credentials are " +
+                        "required", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -224,7 +180,7 @@ this.ScenarioInitialize(scenarioInfo);
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("[ 5User can successfully login to Mars Portal with valid Json data credentials]", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 40
+#line 28
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -234,14 +190,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 41
- testRunner.Given("[ User is on the Mars Portal login page]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 29
+ testRunner.Given("User is on Mars Portal login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 42
- testRunner.When("[User enters valid Json data credentials and click on login button]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 30
+ testRunner.When("User enters valid Json data credentials and click on login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 43
- testRunner.Then("[User should see an success message that is logged in to Mars Portal]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 31
+ testRunner.Then("User should see an success message that is logged in to Mars Portal", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

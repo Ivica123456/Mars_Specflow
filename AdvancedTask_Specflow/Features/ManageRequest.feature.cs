@@ -92,19 +92,11 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+#line 7
+testRunner.When("the user clicks on the Manage Requests dropdown menu and selects the Sent Request" +
+                        "s option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
 #line 8
-testRunner.Given("the user is on the Mars Portal login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 9
-testRunner.When("the user enters valid credentials from the JSON file located at \"C:\\Users\\Ivica\\D" +
-                        "esktop\\AdvancedTask-Specflow\\AdvancedTask_Specflow\\AdvancedTask_Specflow\\TestDat" +
-                        "a\\loginData.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 10
-testRunner.And("the user clicks on the Manage Requests dropdown menu and selects the Sent Request" +
-                        "s option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 11
 testRunner.Then("the application navigates to the /Home/SentRequest page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -118,7 +110,7 @@ testRunner.Then("the application navigates to the /Home/SentRequest page", ((str
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify that clicking on \"Received Request\" navigates to the correct page.", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 13
+#line 10
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -128,19 +120,11 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 15
-testRunner.Given("the user is on the Mars Portal login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 11
+testRunner.When("the user clicks on the Manage Requests dropdown menu and selects the ReceivedRequ" +
+                        "est option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 16
-testRunner.When("the user enters valid credentials from the JSON file located at \"C:\\Users\\Ivica\\D" +
-                        "esktop\\AdvancedTask-Specflow\\AdvancedTask_Specflow\\AdvancedTask_Specflow\\TestDat" +
-                        "a\\loginData.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 17
-testRunner.And("the user clicks on the Manage Requests dropdown menu and selects the ReceivedRequ" +
-                        "est option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 18
+#line 12
 testRunner.Then("the application navigates to the Home/ReceivedRequest page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

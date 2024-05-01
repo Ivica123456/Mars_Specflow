@@ -31,10 +31,11 @@ namespace AdvancedTask_Specflow.AssertHelpers
         public void failureMessage()
         {
             // Wait for the success message element to be visible
-            var failedMessageElement = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div[2]/div/div/div[2]/div[2]")));
+            var failedMessageElement = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div[1]/div")));
 
             // Assert that the success message is displayed
             Assert.IsTrue(failedMessageElement.Displayed);
         }
+        
     }
 }

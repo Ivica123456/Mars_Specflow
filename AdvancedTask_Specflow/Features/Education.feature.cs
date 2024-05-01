@@ -76,8 +76,8 @@ namespace AdvancedTask_Specflow.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("[1Add Education]")]
         [NUnit.Framework.CategoryAttribute("tag1")]
-        [NUnit.Framework.TestCaseAttribute("Croatia", "SEduNet", "M.B.A", "Bachalor", "2022", "ivica.cuncic@gmail.com", "mars123", null)]
-        public void _1AddEducation(string country, string university, string title, string degree, string graduation, string email, string password, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Croatia", "SEduNet", "M.B.A", "Bachalor", "2022", null)]
+        public void _1AddEducation(string country, string university, string title, string degree, string graduation, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "tag1"};
@@ -92,8 +92,6 @@ namespace AdvancedTask_Specflow.Features
             argumentsOfScenario.Add("Title", title);
             argumentsOfScenario.Add("Degree", degree);
             argumentsOfScenario.Add("Graduation", graduation);
-            argumentsOfScenario.Add("email", email);
-            argumentsOfScenario.Add("password", password);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("[1Add Education]", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
@@ -106,15 +104,9 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 7
- testRunner.Given("[User can successfully login to Mars Portal with valid credentials]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.When(string.Format("User add education including \'{0}\', \'{1}\', \'{2}\', \'{3}\',\'{4}\'", university, country, title, degree, graduation), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
- testRunner.When(string.Format("[[User enters valid \'{0}\' and \'{1}\' and click on login button]", email, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 9
- testRunner.And(string.Format("User add education including \'{0}\', \'{1}\', \'{2}\', \'{3}\',\'{4}\'", university, country, title, degree, graduation), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 10
  testRunner.Then("User able to see added education details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -123,20 +115,18 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("[2Edit Education]")]
-        [NUnit.Framework.TestCaseAttribute("ivica.cuncic@gmail.com", "mars123", "Brazil", "Edunet", "B.A", "Bachalor", "2011", null)]
-        public void _2EditEducation(string email, string password, string country, string university, string title, string degree, string graduation, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Brazil", "Edunet", "B.A", "Bachalor", "2011", null)]
+        public void _2EditEducation(string country, string university, string title, string degree, string graduation, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("email", email);
-            argumentsOfScenario.Add("password", password);
             argumentsOfScenario.Add("Country", country);
             argumentsOfScenario.Add("University", university);
             argumentsOfScenario.Add("Title", title);
             argumentsOfScenario.Add("Degree", degree);
             argumentsOfScenario.Add("Graduation", graduation);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("[2Edit Education]", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 16
+#line 14
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -146,16 +136,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 17
- testRunner.Given("[User can successfully login to Mars Portal with valid credentials]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 18
- testRunner.When(string.Format("[[User enters valid \'{0}\' and \'{1}\' and click on login button]", email, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 19
+#line 15
  testRunner.When(string.Format("User edit education including \'{0}\', \'{1}\', \'{2}\', \'{3}\',\'{4}\'", university, country, title, degree, graduation), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 20
+#line 16
  testRunner.Then("User able to see edited education details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -164,15 +148,12 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("[3Delete Education]")]
-        [NUnit.Framework.TestCaseAttribute("ivica.cuncic@gmail.com", "mars123", null)]
-        public void _3DeleteEducation(string email, string password, string[] exampleTags)
+        public void _3DeleteEducation()
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("email", email);
-            argumentsOfScenario.Add("password", password);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("[3Delete Education]", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 26
+#line 22
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -182,16 +163,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 27
- testRunner.Given("[User can successfully login to Mars Portal with valid credentials]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 28
- testRunner.When(string.Format("[[User enters valid \'{0}\' and \'{1}\' and click on login button]", email, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 29
+#line 23
  testRunner.When("User delete education", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 30
+#line 24
  testRunner.Then("Education should be deleted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
