@@ -76,19 +76,11 @@ namespace AdvancedTask_Specflow.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("[1Add certification]")]
         [NUnit.Framework.CategoryAttribute("tag1")]
-        [NUnit.Framework.TestCaseAttribute("ivica.cuncic@gmail.com", "mars123", null)]
-        public void _1AddCertification(string email, string password, string[] exampleTags)
+        public void _1AddCertification()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "tag1"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("email", email);
-            argumentsOfScenario.Add("password", password);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("[1Add certification]", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6
 this.ScenarioInitialize(scenarioInfo);
@@ -101,17 +93,11 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 7
- testRunner.Given("[User can successfully login to Mars Portal with valid credentials]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.When("User add new certification from the JSON file located at \"D:\\Industry Connect\\Adv" +
+                        "ancedTask-Specflow\\AdvancedTask_Specflow\\AdvancedTask_Specflow\\TestData\\certific" +
+                        "ation_data.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 8
- testRunner.When(string.Format("[User enters valid \'{0}\' and \'{1}\' and click on login button]", email, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 9
- testRunner.And("User add new certification from the JSON file located at \"C:\\Users\\Ivica\\Desktop\\" +
-                        "AdvancedTask-Specflow\\AdvancedTask_Specflow\\AdvancedTask_Specflow\\TestData\\certi" +
-                        "fication_data.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 10
  testRunner.Then("[Certification should be added successfully]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -120,14 +106,40 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("[2Edit certification]")]
-        [NUnit.Framework.TestCaseAttribute("ivica.cuncic@gmail.com", "mars123", null)]
-        public void _2EditCertification(string email, string password, string[] exampleTags)
+        public void _2EditCertification()
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("email", email);
-            argumentsOfScenario.Add("password", password);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("[2Edit certification]", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 10
+ this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 11
+ testRunner.When("User edit existing certification from the JSON file located at \"D:\\Industry Conne" +
+                        "ct\\AdvancedTask-Specflow\\AdvancedTask_Specflow\\AdvancedTask_Specflow\\TestData\\ed" +
+                        "itCertification_data.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 12
+ testRunner.Then("[Certification should be edited successfully]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("[3Delete certification]")]
+        public void _3DeleteCertification()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("[3Delete certification]", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 14
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -139,53 +151,9 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 15
- testRunner.Given("[User can successfully login to Mars Portal with valid credentials]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.When("[User delete existing certification]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 16
- testRunner.When(string.Format("[User enters valid \'{0}\' and \'{1}\' and click on login button]", email, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 17
- testRunner.And("User edit existing certification from the JSON file located at \"C:\\\\Users\\\\Ivica\\" +
-                        "\\Desktop\\\\AdvancedTask-Specflow\\\\AdvancedTask_Specflow\\\\AdvancedTask_Specflow\\\\T" +
-                        "estData\\\\editCertification_data.json\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 18
- testRunner.Then("[Certification should be edited successfully]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("[3Delete certification]")]
-        [NUnit.Framework.TestCaseAttribute("ivica.cuncic@gmail.com", "mars123", null)]
-        public void _3DeleteCertification(string email, string password, string[] exampleTags)
-        {
-            string[] tagsOfScenario = exampleTags;
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("email", email);
-            argumentsOfScenario.Add("password", password);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("[3Delete certification]", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 22
- this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 23
- testRunner.Given("[User can successfully login to Mars Portal with valid credentials]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 24
- testRunner.When(string.Format("[User enters valid \'{0}\' and \'{1}\' and click on login button]", email, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 25
- testRunner.And("[User delete existing certification]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 26
  testRunner.Then("[Certification should be deleted successfully]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

@@ -8,38 +8,20 @@ using TechTalk.SpecFlow;
 
 namespace AdvancedTask_Specflow.StepDefinitions
 {
-    
+
     [Binding]
-    public class EducationStepDefinitions: CommonDriver
+    public class EducationStepDefinitions : CommonDriver
     {
-        
+
         WebDriverWait wait;
 
         public EducationStepDefinitions()
         {
-            
+
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
 
         }
-
-
-        [Given(@"\[User can successfully login to Mars Portal with valid credentials]")]
-        public void GivenUserCanSuccessfullyLoginToMarsPortalWithValidCredentials()
-        {
-            // Create a test instance for this step
-            test = extent.CreateTest("User can successfully login to Mars Portal with valid credentials");
-            homePageObj.GoToLoginPage();
-            splashPageObj.clickSignInButton();
-
-        }
-
-        [When(@"\[\[User enters valid '([^']*)' and '([^']*)' and click on login button]")]
-        public void WhenUserEntersValidAndAndClickOnLoginButton(string email, string password)
-        {
-            // Create a test instance for this step
-            test = extent.CreateTest("User enters valid email and password and click on login button");
-            loginPageObj.doSignIn(email, password);
-        }
+        
 
         [When(@"User add education including '([^']*)', '([^']*)', '([^']*)', '([^']*)','([^']*)'")]
         public void WhenUserAddEducationIncluding(string University, string Country, string Title, string Degree, string Graduation)
@@ -51,7 +33,7 @@ namespace AdvancedTask_Specflow.StepDefinitions
             educationComponentObj.AddNewButton();
             addEditDeleteEducationComponentObj.addEducation(University, Country, Title, Degree, Graduation);
 
-                       
+
         }
 
         [Then(@"User able to see added education details")]
@@ -77,7 +59,7 @@ namespace AdvancedTask_Specflow.StepDefinitions
             // Create a test instance for this step
             test = extent.CreateTest("User able to see edited education details");
             educationAssertHelperObj.assertTableRowEdit();
-            
+
         }
         [When(@"User delete education")]
         public void WhenUserDeleteEducation()

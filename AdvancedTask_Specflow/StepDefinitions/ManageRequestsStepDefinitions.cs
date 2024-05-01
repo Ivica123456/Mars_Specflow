@@ -10,26 +10,8 @@ namespace AdvancedTask_Specflow.StepDefinitions
     [Binding]
     public class ManageRequestsStepDefinitions:CommonDriver
     {
-        [Given(@"the user is on the Mars Portal login page")]
-        public void GivenTheUserIsOnTheMarsPortalLoginPage()
-        {
-            //// Create a test instance for this step
-            //test = extent.CreateTest("Given User is on the Mars Portal login page");
-            homePageObj.GoToLoginPage();
-            splashPageObj.clickSignInButton();
-        }
-        [When(@"the user enters valid credentials from the JSON file located at ""([^""]*)""")]
-        public void WhenTheUserEntersValidCredentialsFromTheJSONFileLocatedAt(string p0)
-        {
-            // Create a test instance for this step
-            test = extent.CreateTest("User enters valid credentials from JSON file");
 
-            // Load the JSON file using the 'filePath' parameter.
-            Login_JsonDataModel login_JsonDataModel = JsonConvert.DeserializeObject<Login_JsonDataModel>(File.ReadAllText(p0));
-
-            // Pass the data model object to the `doSignIn` method.
-            loginPage_JsonObj.doSignIn(login_JsonDataModel);
-        }
+    
         [When(@"the user clicks on the Manage Requests dropdown menu and selects the Sent Requests option")]
         public void WhenTheUserClicksOnTheManageRequestsDropdownMenuAndSelectsTheSentRequestsOption()
         {

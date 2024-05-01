@@ -15,17 +15,25 @@ using NUnit.Framework.Interfaces;
 namespace AdvancedTask_Specflow.StepDefinitions
 {
     [Binding]
-    public class CertificationStepDefinitions:CommonDriver
+    public class CertificationStepDefinitions : CommonDriver
     {
+        [BeforeScenario]
+        public void BeforeScenario()
+        {
+            homePageObj.GoToLoginPage();
+            splashPageObj.clickSignInButton();
+            loginPageObj.signIn();
+        }
 
+        //[1Add certification]
         [When(@"User add new certification from the JSON file located at ""([^""]*)""")]
         public void WhenUserAddNewCertificationFromTheJSONFileLocatedAt(string p0)
         {
             // Create a test instance for this step
             test = extent.CreateTest("When user add a new certification");
             profilePageTabsComponentsObj.clickCertificationTab();
-                addEditDeleteCertificationComponentObj.clearTable();
-                certificationComponentsObj.AddNewButton();
+            addEditDeleteCertificationComponentObj.clearTable();
+            certificationComponentsObj.AddNewButton();
 
             // Load the JSON file using the 'filePath' parameter.
             CertificationDataModel certificationDataModel = JsonConvert.DeserializeObject<CertificationDataModel>(File.ReadAllText(p0));
@@ -41,6 +49,7 @@ namespace AdvancedTask_Specflow.StepDefinitions
             test = extent.CreateTest("Then Certification Should Be Added Successfully");
             certificationAssertHelperObj.assertAddCertification();
         }
+        //[2Edit certification]
         [When(@"User edit existing certification from the JSON file located at ""([^""]*)""")]
         public void WhenUserEditExistingCertificationFromTheJSONFileLocatedAt(string p0)
         {
@@ -48,12 +57,12 @@ namespace AdvancedTask_Specflow.StepDefinitions
             test = extent.CreateTest("User edit existing certification from the JSON file");
             profilePageTabsComponentsObj.clickCertificationTab();
             certificationComponentsObj.EditButton();
-            
+
             // Load the JSON file using the 'filePath' parameter.
             CertificationDataModel certificationDataModel = JsonConvert.DeserializeObject<CertificationDataModel>(File.ReadAllText(p0));
             // Pass the data model object to the `EditCertification` method.
             addEditDeleteCertificationComponentObj.EditCertification(certificationDataModel);
-            
+
         }
         [Then(@"\[Certification should be edited successfully]")]
         public void ThenCertificationShouldBeEditedSuccessfully()
@@ -63,6 +72,7 @@ namespace AdvancedTask_Specflow.StepDefinitions
             profilePageTabsComponentsObj.clickCertificationTab();
             certificationAssertHelperObj.assertEditCertification();
         }
+        //[3Delete certification]
         [When(@"\[User delete existing certification]")]
         public void WhenUserDeleteExistingCertification()
         {
