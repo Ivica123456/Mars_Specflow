@@ -1,6 +1,8 @@
 ﻿Feature: Manage Requests
 
-A short summary of the feature
+Background:
+	Given [ User is on the Mars Portal login page]
+	When [User enters valid email and password and click on login button]
 
 @tag1
 Scenario: Verify that clicking on "Sent Requests" navigates to the correct page.

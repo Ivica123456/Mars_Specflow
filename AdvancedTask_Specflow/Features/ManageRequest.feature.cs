@@ -35,7 +35,7 @@ namespace AdvancedTask_Specflow.Features
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Manage Requests", "A short summary of the feature", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Manage Requests", null, ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -73,6 +73,18 @@ namespace AdvancedTask_Specflow.Features
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void FeatureBackground()
+        {
+#line 3
+#line hidden
+#line 4
+ testRunner.Given("[ User is on the Mars Portal login page]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 5
+ testRunner.When("[User enters valid email and password and click on login button]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+        }
+        
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify that clicking on \"Sent Requests\" navigates to the correct page.")]
         [NUnit.Framework.CategoryAttribute("tag1")]
@@ -82,7 +94,7 @@ namespace AdvancedTask_Specflow.Features
                     "tag1"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify that clicking on \"Sent Requests\" navigates to the correct page.", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 6
+#line 8
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -92,11 +104,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
+#line 3
+this.FeatureBackground();
+#line hidden
+#line 9
 testRunner.When("the user clicks on the Manage Requests dropdown menu and selects the Sent Request" +
                         "s option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 8
+#line 10
 testRunner.Then("the application navigates to the /Home/SentRequest page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -110,7 +125,7 @@ testRunner.Then("the application navigates to the /Home/SentRequest page", ((str
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify that clicking on \"Received Request\" navigates to the correct page.", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 10
+#line 12
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -120,11 +135,14 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 11
+#line 3
+this.FeatureBackground();
+#line hidden
+#line 13
 testRunner.When("the user clicks on the Manage Requests dropdown menu and selects the ReceivedRequ" +
                         "est option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 12
+#line 14
 testRunner.Then("the application navigates to the Home/ReceivedRequest page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
