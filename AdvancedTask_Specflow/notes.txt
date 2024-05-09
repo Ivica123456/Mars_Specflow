@@ -1,3 +1,0 @@
-﻿When run LoginFeature then comment out BeforeScenario in CertificationStepDefinitions ,which contains steps for login.
-Given [ User is on the Mars Portal login page]
-When [User enters valid email and password and click on login button]

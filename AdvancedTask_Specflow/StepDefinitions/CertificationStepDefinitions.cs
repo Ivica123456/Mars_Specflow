@@ -17,14 +17,7 @@ namespace AdvancedTask_Specflow.StepDefinitions
     [Binding]
     public class CertificationStepDefinitions : CommonDriver
     {
-        [BeforeScenario]
-        public void BeforeScenario()
-        {
-            homePageObj.GoToLoginPage();
-            splashPageObj.clickSignInButton();
-            loginPageObj.signIn();
-        }
-
+        
         //[1Add certification]
         [When(@"User add new certification from the JSON file located at ""([^""]*)""")]
         public void WhenUserAddNewCertificationFromTheJSONFileLocatedAt(string p0)
