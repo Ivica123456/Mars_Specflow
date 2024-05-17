@@ -49,7 +49,7 @@ namespace AdvancedTask_Specflow.Pages.Components.ProfilePageTabComponents
             selectElementselectCertificationYear.SelectByValue(certificationDataModel.Year);
             //Click on the "Add" button:
             addButton.Click();
-            
+           
         }
         public void renderEditComponents()
         {

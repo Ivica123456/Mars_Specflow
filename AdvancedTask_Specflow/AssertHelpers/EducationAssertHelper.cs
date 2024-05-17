@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,16 +18,22 @@ namespace AdvancedTask_Specflow.AssertHelpers
         public EducationAssertHelper()
         {
 
-            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(15));
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
         }
         public void tableRowCountry()
         {
-            // Find the table row with the country Croatia
-            var row = driver.FindElement(By.XPath("//tr[td[text()='Croatia']]"));
-            var row1 = driver.FindElement(By.XPath("//tr[td[text()='SEduNet']]"));
+           
             
-            // Assert that the country Croatia is displayed
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
+            // Wait for the row with Croatia to be clickable
+            var row = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//tr[td[text()='Croatia']]")));
+
+            // Wait for the row with SEdUNet to be visible
+            var row1 = wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//tr[td[text()='SEduNet']]")));
+
+            // Assert that the country and SEdUNet are displayed
             Assert.IsTrue(row.Displayed);
             Assert.IsTrue(row1.Displayed);
 

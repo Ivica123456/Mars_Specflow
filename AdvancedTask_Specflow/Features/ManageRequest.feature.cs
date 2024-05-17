@@ -78,7 +78,7 @@ namespace AdvancedTask_Specflow.Features
 #line 3
 #line hidden
 #line 4
- testRunner.Given("[ User is on the Mars Portal login page]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("User is on Mars Portal login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 5
  testRunner.When("[User enters valid email and password and click on login button]", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
