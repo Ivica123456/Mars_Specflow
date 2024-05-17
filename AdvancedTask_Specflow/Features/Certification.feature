@@ -1,7 +1,7 @@
 ﻿Feature: Certification
 
 Background:
-	Given [ User is on the Mars Portal login page]
+	Given User is on Mars Portal login page
 	When [User enters valid email and password and click on login button]
 
 @tag1

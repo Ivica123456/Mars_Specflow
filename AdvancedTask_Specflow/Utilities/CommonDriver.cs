@@ -16,6 +16,8 @@ using NUnit.Framework.Interfaces;
 using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
 using AdvancedTask_Specflow.Json_DataModelHelper;
+using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Firefox;
 
 
 namespace AdvancedTask_Specflow.Utilities
@@ -23,6 +25,7 @@ namespace AdvancedTask_Specflow.Utilities
     [Binding]
     public class CommonDriver
     {
+       
         public static IWebDriver driver;
         public static LoginPage loginPageObj;
         public static HomePage homePageObj;
@@ -47,12 +50,30 @@ namespace AdvancedTask_Specflow.Utilities
         public static ExtentTest test;
 
 
-        [BeforeTestRun]
-        public static void BeforeTestRun()
+        
+        [BeforeScenario]
+        public static void BeforeScenario()
         {
-            driver = new ChromeDriver();
-            loginPageObj = new LoginPage();
+            // Get the browser type from an environment variable or default to Chrome
+            string browserType = Environment.GetEnvironmentVariable("BROWSER") ?? "Chrome";
+
+            switch (browserType)
+            {
+                case "Chrome":
+                    driver = new ChromeDriver();
+                    break;
+                case "Edge":
+                    driver = new EdgeDriver();
+                    break;
+                case "Firefox":
+                    driver = new FirefoxDriver();
+                    break;
+                default:
+                    throw new ArgumentException($"Unsupported browser: {browserType}");
+            }
+
             homePageObj = new HomePage();
+            loginPageObj = new LoginPage();
             splashPageObj = new SplashPage();
             loginAssertHelperObj = new LoginAssertHelper();
             changePasswordMessageHelperObj = new ChangePasswordMessageHelper();
@@ -80,6 +101,8 @@ namespace AdvancedTask_Specflow.Utilities
             test = extent.CreateTest("Test Run Report");
 
         }
+     
+
         [AfterScenario]
         public void AfterScenario(ScenarioContext scenarioContext)
           {
@@ -104,15 +127,14 @@ namespace AdvancedTask_Specflow.Utilities
 
             // Log additional information if needed
             test.Log(Status.Info, "Additional info for the scenario");
-        }
 
-        [AfterTestRun]
-        public static void AfterTestRun()
-        {
+
             extent.Flush();
             driver.Dispose();
+
         }
 
+       
     }
 
 }

@@ -43,7 +43,7 @@ namespace AdvancedTask_Specflow.Pages
             string password = Environment.GetEnvironmentVariable("MarsPassword");
 
             // Enter valid username in TextBox
-            Wait.WaitToBeVisible(driver, "XPath", "/html/body/div[2]/div/div/div[1]/div/div[1]/input", 5);
+            Wait.WaitToBeVisible(driver, "XPath", "/html/body/div[2]/div/div/div[1]/div/div[1]/input", 15);
             emailTextbox.SendKeys(username);
 
             // Enter valid password in TextBox

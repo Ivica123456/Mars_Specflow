@@ -1,7 +1,11 @@
 ﻿Feature: PasswordChange
 
+  As a user
+  I want to be able to change my password
+  So that I can keep my account secure
+
 Background:
-	Given [ User is on the Mars Portal login page]
+	Given User is on Mars Portal login page
 	When [User enters valid email and password and click on login button]
 
 @tag1
@@ -18,8 +22,8 @@ Scenario: [3User cannot change their password if the new password is the same as
 	Then The user should receive an error message indicating that the new password cannot be the same as the current password
 
 
-Scenario: [4Change to new password]
+Scenario: [4User change the password, verifying the change, and reverting back to the original password while ensuring that automation tests can continue to run with the original credentials]
 	When [User change to new password successfully]
 	Then [User should login with new password successfully]
 	Then [User is logged in and landed to profile page]
-	
+	And [user revert back to the old password]

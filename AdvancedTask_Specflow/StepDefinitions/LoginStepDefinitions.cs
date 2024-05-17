@@ -16,27 +16,21 @@ namespace AdvancedTask_Specflow.StepDefinitions
     public class LoginStepDefinitions : CommonDriver
     {
 
-
-        // Scenario: [ 1User can successfully login to Mars Portal with valid credentials]
-        [Given(@"\[ User is on the Mars Portal login page]")]
-        public void GivenUserIsOnTheMarsPortalLoginPage()
+        // User can successfully login to Mars Portal with valid credentials
+        [Given(@"User is on Mars Portal login page")]
+        public void GivenUserIsOnMarsPortalLoginPage()
         {
-            // Create a test instance for this step
-            test = extent.CreateTest("User is on the Mars Portal login page");
+            
             homePageObj.GoToLoginPage();
             splashPageObj.clickSignInButton();
-
         }
         [When(@"\[User enters valid email and password and click on login button]")]
         public void WhenUserEntersValidEmailAndPasswordAndClickOnLoginButton()
         {
 
-
             test = extent.CreateTest("User is on the Mars Portal login page");
             loginPageObj.signIn();
         }
-
-
         [Then(@"\[User is successfully logged in to Mars Portal]")]
         public void ThenUserIsSuccessfullyLoggedInToMarsPortal()
         {
@@ -45,14 +39,7 @@ namespace AdvancedTask_Specflow.StepDefinitions
             loginAssertHelperObj.successMessage();
 
         }
-
-        //Scenario Outline: [ 2User cannot successfully login to Mars Portal with invalid credentials]
-        [Given(@"User is on Mars Portal login page")]
-        public void GivenUserIsOnMarsPortalLoginPage()
-        {
-            homePageObj.GoToLoginPage();
-            splashPageObj.clickSignInButton();
-        }
+        //User cannot successfully login to Mars Portal with invalid credentials
         [When(@"User enters invalid '([^']*)' and '([^']*)' and click on login button")]
         public void WhenUserEntersInvalidAndAndClickOnLoginButton(string email, string password)
         {
@@ -93,18 +80,18 @@ namespace AdvancedTask_Specflow.StepDefinitions
         {
             //Create a test instance for this step
 
-               test = extent.CreateTest("User enters valid Json data credentials and click on login button");
-               jsonFileDataModelLoaderObj.loginData();
+            test = extent.CreateTest("User enters valid Json data credentials and click on login button");
+            jsonFileDataModelLoaderObj.loginData();
         }
         [Then(@"User should see an success message that is logged in to Mars Portal")]
         public void ThenUserShouldSeeAnSuccessMessageThatIsLoggedInToMarsPortal()
         {
             //Create a test instance for this step
 
-               test = extent.CreateTest("User should see an success message that is logged in to Mars Portal");
-               loginAssertHelperObj.successMessage();
+            test = extent.CreateTest("User should see an success message that is logged in to Mars Portal");
+            loginAssertHelperObj.successMessage();
         }
 
-       
+
     }
 }
