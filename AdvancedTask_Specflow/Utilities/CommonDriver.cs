@@ -25,7 +25,7 @@ namespace AdvancedTask_Specflow.Utilities
     [Binding]
     public class CommonDriver
     {
-       
+        [ThreadStatic]
         public static IWebDriver driver;
         public static LoginPage loginPageObj;
         public static HomePage homePageObj;
